@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Admin Panel</title>
+    <meta content="" name="author">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path("img/favicons/apple-touch-icon.png")%>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= asset_path("img/favicons/favicon-32x32.png")%>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= asset_path("img/favicons/favicon-16x16.png")%>">
+    <link rel="shortcut icon" type="image/x-icon" href="<%= asset_path("img/favicons/favicon.ico")%>">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="manifest" href="<%= asset_path("img/favicons/manifest.json")%>">
+    <meta name="msapplication-TileImage" content="<%= asset_path("img/favicons/mstile-150x150.png")%>">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="<%= asset_path("lib/bootstrap/css/bootstrap.min.css")%>" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="<%= asset_path("css/style.css")%>" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <% require "date"%> 
+  </head>
+
+  <body>
+
+      <%if notice.nil? == false%>
+        <div class="alert alert-warning alert-dismissible fade show mb-0" style="text-align:center;"role="alert">
+        <strong><%= notice%></strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+       </div>
+    <%end%>
+    <%= yield %>
+  </body>
+</html>

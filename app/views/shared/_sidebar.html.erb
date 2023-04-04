@@ -1,0 +1,71 @@
+<div id="spinner"
+            class="show bg-light position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Sidebar Start -->
+        <aside class="sidebar pb-3">
+            <button class="d-lg-none close_btn"><img src="<%= asset_path("img/icons/close_icon.svg")%>" alt="Close" width="30" /></button>
+            <nav class="navbar text-left">
+                <a href="dashboard.html" class="navbar-brand my-4 pt-2 pb-4 m-auto text-center">
+                    <img src="<%= asset_path("img/logo.svg")%>" alt="Sbrigit" width="144" class="img-fluid" />
+                </a>
+
+                <ul class="navbar-nav w-100">
+                    <li class="nav-item">
+                    <%= link_to "Dashboard", authenticated_root_path ,class:"nav-link" %>
+                    <%
+=begin%>
+ <a href="dashboard.html" class="nav-link active"><i class="me-2"><img
+                                    src="<%= asset_path("img/icons/menu_icons/dashboard_icon.svg")%>" width="24" alt="" /></i> Dashboard </a> 
+<%
+=end%>
+                                    </li>
+                    <li class="nav-item">
+                        <%= link_to "News Management", news_path,class:"nav-link" %>
+                        <%
+=begin%>
+ <a href="retailers.html" class="nav-link"><i
+                                class="me-2"><img src="<%= asset_path("img/icons/menu_icons/retailor_icon.svg")%>" width="23"
+                                    alt="" /></i>
+                            News Managment
+                        </a>  
+<%
+=end%>
+                    </li>
+                    <li class="nav-item">
+
+                    <%= link_to "Project Management", project_path,class:"nav-link" %>
+                    <%
+=begin%>
+ <a href="drivers.html" class="nav-link"><i class="me-2"><img
+                                    src="<%= asset_path("img/icons/menu_icons/driver_icon.svg")%>" width="23" alt="" /></i>
+                           Project Managment</a> 
+<%
+=end%>
+                           </li>
+                </ul>
+                <div class="logout_menu">
+                
+                 <%= link_to "Logout", destroy_user_session_path,data:{'turbo-method': :delete}, class:"dropdown-item"%>
+                <i class="me-2">
+                <img src="<%= asset_path("img/icons/menu_icons/logout_icon.svg")%>" width="24" alt="Logout" /></i> Log Out </a>
+                </div>
+            </nav>
+
+        </aside>
+        <!-- Sidebar End -->
+
+        <!-- Content Start -->
+      
+<%
+=begin%>
+ rakumar@chicmic.co.in
+bond : 2 years
+bond amount 6 lakh
+ 
+<%
+=end%>

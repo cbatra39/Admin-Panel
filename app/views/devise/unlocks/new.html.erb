@@ -1,0 +1,82 @@
+<div class="overflow-hidden front_form">
+
+        <div class="row g-0">
+            <div class="d-none d-md-flex col-md-6 login_bg">
+                <div class="front_logo">
+                    <img src="<%= asset_path("img/logo.svg")%>" alt="Sbrigit" width="249"/>
+                </div>
+            </div>
+            <div class="col-md-6"> 
+                <div class="d-flex flex-column align-items-start justify-content-center px-3 px-md-5 min-vh-100">
+                    <div class="ls_form">
+                        <div class="d-md-none front_logo">
+                            <img src="<%= asset_path("img/logo.svg")%>" alt="Sbrigit" width="249"/>
+                        </div>
+
+                        <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+                          <%= render "devise/shared/error_messages", resource: resource %>
+                            <div class="title_group text-left mb-4 pb-3"> 
+                                <h1 class="h1 mb-3">Login</h1>
+                                <p>Reset Your Password.</p>
+                            </div>
+
+                            <div class="mb-4"> 
+                                <div class="position-relative">
+                                    <%= f.email_field :email,class:"form-control", autofocus: true, autocomplete: "email",placeholder:"Enter Email" , required:"true"%>
+                                </div>
+                            </div>
+                            <div class="pt-3">
+
+                              <%= f.submit "Resend unlock instructions",class:"py-md-3 w-100 btn btn-lg btn-primary" %>
+                            </div>
+
+                        <% end %>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!--  End Login Page -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="<%=asset_path("js/main.js")%>"></script>
+
+    <!-- Script -->
+    <script>
+        function show() {
+            var a = document.getElementById("pwd");
+            var b = document.getElementById("EYE");
+            if (a.type == "password") {
+                a.type = "text";
+                b.src = "<%= asset_path("img/icons/show_password.svg")%>";
+            } else {
+                a.type = "password";
+                b.src = "<%= asset_path("img/icons/hide_password.svg")%>";
+            }
+        }
+    </script>
+
+
+<%
+=begin%>
+ 
+<h2>Resend unlock instructions</h2>
+
+<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Resend unlock instructions" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %> 
+<%
+=end%>
