@@ -11,7 +11,7 @@
                     <span class="h6 mb-0 text-capitalize">Hello
                     <%user = Info.find_by(user_id: current_user.id)%>
                     <%if user.nil?%>
-                         <%= Admin%>
+                         <%= "Admin"%>
                         <%else%>
                         <%= user.fname%>
                         <%end%>
@@ -29,7 +29,7 @@
                             data-bs-toggle="dropdown">
                             <em class="me-2 avtar avtar-30 border-0"><img src="<%= asset_path("img/avatar.jpg")%>" alt="" width="30" /></em>
                             <span class="me-2"><%if user.nil?%>
-                         <%= Admin%>
+                         <%= "Admin"%>
                         <%else%>
                         <%= user.fname%>
                         <%end%> </span>

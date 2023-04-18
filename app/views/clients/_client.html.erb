@@ -1,0 +1,14 @@
+
+<div class="card mb-4" style="width:25rem;" >
+  <div class="card-body">
+    <h5 class="card-title"><%= @client.fname %></h5>
+    <p class="card-text">
+      Info:  <%=@client.email%><br>
+      Email: <%=@client.phoneno%><br>
+      Status: <%= @client.status%>
+    </p>
+      <%= link_to "Edit", edit_client_path(@client),class:"btn btn-primary mb-3" %> 
+      <%= link_to "Delete", @client,data:{'turbo-method': :delete},class:"btn btn-danger mb-3"%>
+      <%= link_to "Back", clients_path,data: {turbo:false}, class:"btn btn-dark mb-3 " %>
+  </div>
+</div>

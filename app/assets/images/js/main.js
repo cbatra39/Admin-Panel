@@ -55,22 +55,41 @@
     });
 
     // Add slideUp animation to Bootstrap dropdown when collapsing.
-    // $('.dropdown').on('hide.bs.dropdown', function() {
-    //     $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
-    // });
+    $('.dropdown').on('hide.bs.dropdown', function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+    });
+
+
+    $('#email_address').on('keypress', function() {
+        var re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
+        if(!re) {
+            $('#invalid_email').show();
+            $("#submit").prop('disabled', true);
+        } else {
+            $('#invalid_email').hide();
+            $("#submit").prop('disabled', false);
+
+        }
+    });
+    $(document).on('click', '.update-status-link', function(e) {
+        e.preventDefault();
+        var clientId = $(this).data('client-id');
+        $.ajax({
+          type: "PATCH",
+          url: "/clients/" + clientId + "/update_status",
+          success: function(data, textStatus, jqXHR) {
+            // handle success
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            // handle error
+          }
+        });
+      });
+
+
+      
+
+
+
 })(jQuery);
-
-
-function Validate(e) {
-    var keyCode = e.keyCode || e.which;
-    var regex = /^[A-Za-z]+$/;
-    var isValid = regex.test(String.fromCharCode(keyCode));
-    if(!isValid){
-        document.getElementById("error_name").classList.remove("error-message");
-    }
-    else{
-        document.getElementById("error_name").classList.add("error-message");
-    }
-    return isValid;
-}
 

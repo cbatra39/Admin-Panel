@@ -85,6 +85,7 @@
 }
 
 
+
 /* No Data Found */
 .no_data_found_sec {min-height: calc(100vh - 250px);}
 .card-block .form-control-sm { font-weight: 600; background-color: var(--grey-color-100); border-radius: 10px; color: var(--black-color-800); border-color: var(--grey-color-900);}

@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :clients do
+    patch :update_status, on: :member
+  end
+  get 'search',to: "clients#search"
+
+
+  post 'users/sort',to: "clients#sortusers"
+  post 'users/sortbyemail',to: "clients#sortByEmail"
+
   devise_for :users, controllers: { sessions: 'users/sessions' }
   devise_scope :user do
     authenticated :user do

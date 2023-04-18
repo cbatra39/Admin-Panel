@@ -1,0 +1,12 @@
+var id = "#status"+ "<%=params[:id]%>"
+
+var val = $(id).html();
+
+if(val === 'Active'){
+    $(id).html("Inactive");
+    
+}
+else{
+    $(id).html("Active");
+}
+

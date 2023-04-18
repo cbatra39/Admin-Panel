@@ -29,7 +29,8 @@
                             <%end%>
                             <div class="mb-4"> 
                                 <div class="position-relative">
-                                    <%= f.email_field :email,class:"form-control", autofocus: true, autocomplete: "email",placeholder:"Enter Email" , required:"true"%>
+                                    <%= f.text_field :email,class:"form-control", autofocus: true, autocomplete: "email",placeholder:"Enter Email" , required:"true",id:"email_address"%>
+                                    <span id="invalid_email" style="display:none;color:red;">Enter an valid email</span>
                                 </div>
                             </div>
                             <div class="mb-4"> 
@@ -44,7 +45,7 @@
                             </div>
 
                             <div class="pt-3">
-                              <%= f.submit "Log in",class:"py-md-3 w-100 btn btn-lg btn-primary" %>
+                              <%= f.submit "Log in",class:"py-md-3 w-100 btn btn-lg btn-primary",id:"submit"%>
                             </div>
 
                         <% end %>

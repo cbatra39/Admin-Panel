@@ -1,0 +1,1 @@
+$("#datarecords").html(" <% @clients.each do |client|%><%= escape_javascript render  'clientTable', c: client %><% end %>");

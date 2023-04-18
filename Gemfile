@@ -11,7 +11,8 @@ gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
-
+gem 'pagy', '~> 6.0', '>= 6.0.3'
+gem 'jquery-turbolinks', '~> 2.1'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 

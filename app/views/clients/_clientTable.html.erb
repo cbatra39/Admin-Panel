@@ -1,0 +1,16 @@
+<tr id="<%= dom_id c%>">
+    <td>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="<%=c.status%>" id="flexCheckDefault">
+      </div>
+    </td>
+    <td><%= c.fname + " "+ c.lname%></td>
+    <td><%= c.email%></td>
+    <td><%= c.phoneno %></td>
+    <% s_id = "status"+ c.id.to_s %>
+    <td id="<%=s_id%>"><%= c.status == true ? 'Active' : 'Inactive'%></td>
+    <td><%= link_to "", c,class:"fa-regular fa-eye text-decoration-none" %></td>
+    <td><%= link_to "",edit_client_path(c),class:"fa-solid fa-pencil text-decoration-none" %></td>
+    <td> <i class ="fa fa-lock text-decoration-none btn-click" id= "<%=c.id%>"></i></td>
+    <td><%= link_to "" , c,data:{"turbo-method": :delete, remote: true}, class:"fa-solid fa-trash remove_user"%></td>
+</tr>
